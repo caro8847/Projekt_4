@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="da">
 <head>
+    <script src="js/dag_i_liv.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <meta charset="utf-8" />
@@ -163,32 +164,5 @@
       </div>
     </div>
   </footer>
-  <script>
-    const video = document.getElementById('customVideo');
-    const playBtn = document.getElementById('playButton');
-  
-    // Toggle play/pause
-    function togglePlay() {
-      if (video.paused) {
-        video.play();
-        playBtn.classList.add('hidden');   // hide icon when playing
-      } else {
-        video.pause();
-        playBtn.classList.remove('hidden'); // show icon when paused
-      }
-    }
-  
-    // Click overlay button
-    playBtn.addEventListener('click', togglePlay);
-  
-    // Click directly on video also toggles play/pause
-    video.addEventListener('click', togglePlay);
-  
-    // Keep icon state in sync with actual playback
-    video.addEventListener('play', () => playBtn.classList.add('hidden'));
-    video.addEventListener('pause', () => playBtn.classList.remove('hidden'));
-    video.addEventListener('ended', () => playBtn.classList.remove('hidden')); // show again when finished
-  </script>
-  
 </body>
 </html>
