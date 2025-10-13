@@ -39,72 +39,67 @@
         der forandrer liv – også dit eget.
       </h1>
     </section>
-         <!-- Hero Video Section -->
-<section class="hero-video">
-    <div class="container">
-      <div class="video-section">
-        <div class="video-wrapper">
-          <video 
-            id="heroVideo"
-            preload="auto"
-            playsinline
-            class="custom-video">
-            <source src="videos/dag_i_liv.mp4" type="video/mp4">
-            Din browser understøtter ikke videoafspilning.
-          </video>
+        <!-- Cluster that stacks on mobile and goes 2-column on desktop -->
+<section class="hero-cluster">
+    <div class="container hero-grid">
+      <!-- LEFT: hero video -->
+      <section class="hero-video">
+        <div class="video-section">
+          <div class="video-wrapper">
+            <video 
+              id="heroVideo"
+              preload="auto"
+              playsinline
+              class="custom-video">
+              <source src="videos/dag_i_liv.mp4" type="video/mp4">
+              Din browser understøtter ikke videoafspilning.
+            </video>
   
-          <button class="play-button" id="heroPlayButton" aria-label="Afspil/Pause">
-            <img src="images/play_button.png" alt="Play" class="play-icon">
+            <button class="play-button" id="heroPlayButton" aria-label="Afspil/Pause">
+              <img src="images/play_button.png" alt="Play" class="play-icon">
+            </button>
+          </div>
+        </div>
+      </section>
+  
+      <!-- RIGHT: testimonials carousel -->
+      <section class="gallery-section">
+        <div class="carousel" id="testiCarousel" aria-roledescription="carousel">
+          <button class="carousel-nav prev" aria-label="Forrige">
+            <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
           </button>
+  
+          <div class="carousel-track">
+            <article class="slide is-active">
+              <img class="avatar" src="images/person_isabella.webp" alt="Isabella" loading="lazy">
+              <blockquote class="quote">“Man giver noget til andre og får et sindssygt godt fællesskab mellem frivillige igen”</blockquote>
+              <p class="author">- Isabella, Frivillig i Ventilen Odense</p>
+            </article>
+  
+            <article class="slide">
+              <img class="avatar" src="images/person_2.webp" alt="Navn på frivillig" loading="lazy">
+              <blockquote class="quote">“(Udskift med din næste anbefaling)…”</blockquote>
+              <p class="author">- Navn, Frivillig i Ventilen [By]</p>
+            </article>
+  
+            <article class="slide">
+              <img class="avatar" src="images/person_3.webp" alt="Navn på frivillig" loading="lazy">
+              <blockquote class="quote">“(Udskift med din tredje anbefaling)…”</blockquote>
+              <p class="author">- Navn, Frivillig i Ventilen [By]</p>
+            </article>
+          </div>
+  
+          <button class="carousel-nav next" aria-label="Næste">
+            <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+          </button>
+  
+          <div class="carousel-dots" role="tablist" aria-label="Slides"></div>
         </div>
-      </div>
+      </section>
     </div>
   </section>
   
 
-
-  <section class="gallery-section">
-    <div class="container">
-      <div class="carousel" id="testiCarousel" aria-roledescription="carousel">
-        <!-- Prev -->
-        <button class="carousel-nav prev" aria-label="Forrige">
-          <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
-        </button>
-  
-        <!-- Track -->
-        <div class="carousel-track">
-          <!-- Slide 1 -->
-          <article class="slide is-active">
-            <img class="avatar" src="images/person_isabella.webp" alt="Isabella" loading="lazy">
-            <blockquote class="quote">“Man giver noget til andre og får et sindssygt godt fællesskab mellem frivillige igen”</blockquote>
-            <p class="author">- Isabella, Frivillig i Ventilen Odense</p>
-          </article>
-  
-          <!-- Slide 2 -->
-          <article class="slide">
-            <img class="avatar" src="images/person_2.webp" alt="Navn på frivillig" loading="lazy">
-            <blockquote class="quote">“(Udskift med din næste anbefaling)…”</blockquote>
-            <p class="author">- Navn, Frivillig i Ventilen [By]</p>
-          </article>
-  
-          <!-- Slide 3 -->
-          <article class="slide">
-            <img class="avatar" src="images/person_3.webp" alt="Navn på frivillig" loading="lazy">
-            <blockquote class="quote">“(Udskift med din tredje anbefaling)…”</blockquote>
-            <p class="author">- Navn, Frivillig i Ventilen [By]</p>
-          </article>
-        </div>
-  
-        <!-- Next -->
-        <button class="carousel-nav next" aria-label="Næste">
-          <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
-        </button>
-  
-        <!-- Dots -->
-        <div class="carousel-dots" role="tablist" aria-label="Slides"></div>
-      </div>
-    </div>
-  </section>
   
     <section class="frivillig">
         <h2>Frivillig i Ventilen</h2>
