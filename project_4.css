@@ -536,7 +536,7 @@ html {
 .mission h2{
     text-align: center;
     font-size: clamp(24px, 3.2vw, 36px);
-    font-weight: 700;
+    font-weight: 300;
     margin: 24px 0 32px;
 }
 
