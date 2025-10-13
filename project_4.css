@@ -265,7 +265,7 @@ body {
     border: 3px solid #EA620E;
     border-radius: 40px;
     z-index: -1;
-    mask: radial-gradient(circle at 10% 50%, black98%, transparent 100%) repeat-x;
+    mask: radial-gradient(circle at 10% 50%, black 98%, transparent 100%) repeat-x;
     mask-size: 20px 100%;
   }
   
