@@ -3,6 +3,7 @@
   --cta-blue: #2563eb;
   --cta-blue-hover: #1d4ed8;
   --text: #0f172a;
+  --orange: #EA620E;
   --maxw: 1100px;
 }
 
@@ -492,6 +493,14 @@ html {
    font-size: clamp(18px, 2.2vw, 22px); 
    line-height: 1.45;
    margin: 24px 0;
+}
+
+.mission .highlight{
+    color: var(--orange);
+    font-weight: 800;
+    line-height: 1;
+    display: inline-block;
+    vertical-align: baseline;
 }
   
   
