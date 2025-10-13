@@ -502,6 +502,29 @@ html {
     display: inline-block;
     vertical-align: baseline;
 }
+
+.mission p:nth-of-type(1) .highlight{
+    font-size: clamp(48px, 8vw, 88px);
+    margin-right: 12px;
+}
+
+.mission p:nth-of-type(2){
+    display: flow-root;
+}
+.mission p:nth-of-type(2) .highlight{
+    font-size: clamp(56px, 10vw, 120px);
+    float: right;
+    margin-left: 16px;
+}
+
+.mission .center{
+    text-align: center;
+}
+
+.mission .small{
+    font-size: clamp(14px, 1.8vw, 16px);
+    text-underline-offset: 3px;
+}
   
   
   
