@@ -278,7 +278,10 @@ html {
 
   .bliv-frivillig {
     text-align: center;
-    padding: 48px 16px;
+    padding: 60px 16px;
+  }
+  .bliv-frivillig h2 {
+    margin-bottom: 32px;
   }
   :root {
     --accent-orange: #EA620E; /* for quote */
@@ -479,7 +482,7 @@ html {
     padding: 40px 16px 48px;
     color: var(--text);
     border-top: 2px solid var(--line);
-    border-bottom: 2px solid var(--line);
+    border-bottom: 1px solid var(--line);
 }
 
 .mission h2{
