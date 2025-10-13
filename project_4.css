@@ -87,7 +87,7 @@ html {
   font-size: 22px;
   letter-spacing: .2px;
   /* If you want to keep orange, use var(--heading-orange) instead */
-  color: var(--text);
+  color: var(--orange);
   line-height: 1.3;
 }
 
