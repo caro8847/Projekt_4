@@ -267,7 +267,11 @@ html {
     border: 3px solid #EA620E;
     border-radius: 40px;
     z-index: -1;
-    mask: radial-gradient(circle at 10% 50%, black 98%, transparent 100%) repeat-x;
+
+    -webkit-mask: radial-gradient(circle at 10% 50%, #000 98%, transparent 100%) repeat-x;
+    mask: radial-gradient(circle at 10% 50%, #000 98%, transparent 100%) repeat-x;
+
+    -webkit-mask-size: 20px 100%;
     mask-size: 20px 100%;
   }
 
