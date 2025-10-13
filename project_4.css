@@ -454,6 +454,28 @@ html {
     .hero-grid .carousel-nav.prev { left: -6px; }
     .hero-grid .carousel-nav.next { right: -6px; }
   }
+
+  .mission{
+    max-width: 780px;
+    margin: 40px auto;
+    padding: 40px 16px 48px;
+    color: var(--text);
+    border-top: 2px solid var(--line);
+    border-bottom: 2px solid var(--line);
+}
+
+.mission h2{
+    text-align: center;
+    font-size: clamp(24px, 3.2vw, 36px);
+    font-weight: 700;
+    margin: 24px 0 32px;
+}
+
+.mission p{
+   font-size: clamp(18px, 2.2vw, 22px); 
+   line-height: 1.45;
+   margin: 24px 0;
+}
   
   
   
