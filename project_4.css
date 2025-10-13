@@ -420,27 +420,16 @@ html {
       display: grid;
       grid-template-columns: 420px 1fr; /* left fixed to video width, right flexible */
       gap: 36px;
-      align-items: start;
+      align-items: center; /* center the two columns vertically */
       padding-top: 28px;
       padding-bottom: 12px;
     }
-    /* === Vertically center carousel relative to hero video on desktop === */
-@media (min-width: 960px) {
-    .hero-grid {
-      align-items: center; /* center the two columns vertically */
-    }
-  
+
     /* Optional: make right column (carousel) a bit narrower for nicer balance */
-    .hero-grid .gallery-section {
-      max-width: 520px;
-    }
+    .hero-grid .gallery-section { max-width: 520px; }
   
     /* Adjust top/bottom spacing so it's balanced */
-    .hero-cluster {
-      padding: 40px 0;
-    }
-  }
-  
+    .hero-cluster { padding: 40px 0; }
   
     /* Make the hero video tidy in its column */
     .hero-grid .video-section {
@@ -448,7 +437,7 @@ html {
       display: block;
     }
     .hero-grid .video-wrapper {
-      max-width: 420px;      /* match grid left column */
+      max-width: 420px;           /* match grid left column */
       aspect-ratio: 9 / 16;
       border-radius: 16px;
       box-shadow: 0 6px 16px rgba(0,0,0,0.15);
@@ -456,9 +445,7 @@ html {
       background: #000;
       margin: 0;
     }
-  
-    /* Carousel column tweaks for desktop */
-    .hero-grid .gallery-section { padding: 0; }
+     /* Carousel column tweaks for desktop */
     .hero-grid .carousel { position: relative; padding: 6px 0; }
     .hero-grid .carousel .quote { text-align: left; margin-left: 0; margin-right: 0; max-width: 38ch; }
     .hero-grid .author { text-align: left; }
@@ -466,5 +453,6 @@ html {
     .hero-grid .carousel-nav.prev { left: -6px; }
     .hero-grid .carousel-nav.next { right: -6px; }
   }
+  
   
   
