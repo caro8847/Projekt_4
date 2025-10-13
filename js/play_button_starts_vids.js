@@ -34,4 +34,21 @@ document.addEventListener('DOMContentLoaded', () => {
     video.addEventListener('pause', () => playBtn.classList.remove('hidden'));
     video.addEventListener('ended', () => playBtn.classList.remove('hidden'));
   });
+
+  // === Pause videos when out of view ===
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const video = entry.target;
+        if (!entry.isIntersecting && !video.paused) {
+          video.pause();
+        }
+      });
+    },
+    {
+      threshold: 0.25, // triggers when less than 25% of video is visible
+    }
+  );
+
+  document.querySelectorAll('video.custom-video').forEach((v) => observer.observe(v));
 });
