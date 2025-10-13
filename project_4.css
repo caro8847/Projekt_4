@@ -172,4 +172,29 @@
   .footer-left .footer-row span {
     word-break: break-word;
   }
+/* Self-hosted video styling */
+.video-section {
+    width: 100%;
+    max-width: 500px;
+    margin: 32px auto;
+    padding: 0 24px; /* white space on the sides */
+  }
+  
+  .custom-video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    background: #000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    object-fit: cover;
+  }
+  
+  /* Adjust spacing for small screens */
+  @media (max-width: 480px) {
+    .video-section {
+      margin: 24px auto;
+      padding: 0 16px;
+    }
+  }
   
