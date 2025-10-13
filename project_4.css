@@ -214,29 +214,33 @@ body {
     margin: 0 auto;
   }
   
-  /* centered overlay play icon */
   .play-button {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, 0.6);
-    color: #fff;
+    background: transparent; /* no background, PNG handles visuals */
     border: none;
-    border-radius: 50%;
-    padding: 18px 22px;
-    font-size: 42px;
-    display: grid;
-    place-items: center;
+    padding: 0;
     cursor: pointer;
-    transition: opacity .25s ease, background .2s ease;
+    transition: opacity 0.5s ease;
     opacity: 1;
   }
-  
-  .play-button:hover { background: rgba(0, 0, 0, 0.8); }
   
   .play-button.hidden {
     opacity: 0;
     pointer-events: none;
+  }
+  
+  /* make sure PNG scales nicely */
+  .play-icon {
+    width: 80px;   /* adjust to desired size */
+    height: auto;
+    display: block;
+    transition: transform 0.2s ease;
+  }
+  
+  .play-button:hover .play-icon {
+    transform: scale(1.05);
   }
   
