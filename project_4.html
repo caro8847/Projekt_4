@@ -2,6 +2,7 @@
 <html lang="da">
 <head>
     <script src="js/play_button_starts_vids.js" defer></script>
+    <script src="js/carousel.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <meta charset="utf-8" />
@@ -62,23 +63,49 @@
   
 
 
-    <!-- Video and Gallery -->
-    <section class="gallery-section">
-      <div class="gallery">
-        <div>
-          <p>"Man giver noget til andre og får et sindsygt godt fællesskab mellem frivillige igen"</p>
-          <p>- Isabella, frivillig i Ventilen Odense</p>
+  <section class="gallery-section">
+    <div class="container">
+      <div class="carousel" id="testiCarousel" aria-roledescription="carousel">
+        <!-- Prev -->
+        <button class="carousel-nav prev" aria-label="Forrige">
+          <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+        </button>
+  
+        <!-- Track -->
+        <div class="carousel-track">
+          <!-- Slide 1 -->
+          <article class="slide is-active">
+            <img class="avatar" src="images/person_isabella.webp" alt="Isabella" loading="lazy">
+            <blockquote class="quote">“Man giver noget til andre og får et sindssygt godt fællesskab mellem frivillige igen”</blockquote>
+            <p class="author">- Isabella, Frivillig i Ventilen Odense</p>
+          </article>
+  
+          <!-- Slide 2 -->
+          <article class="slide">
+            <img class="avatar" src="images/person_2.webp" alt="Navn på frivillig" loading="lazy">
+            <blockquote class="quote">“(Udskift med din næste anbefaling)…”</blockquote>
+            <p class="author">- Navn, Frivillig i Ventilen [By]</p>
+          </article>
+  
+          <!-- Slide 3 -->
+          <article class="slide">
+            <img class="avatar" src="images/person_3.webp" alt="Navn på frivillig" loading="lazy">
+            <blockquote class="quote">“(Udskift med din tredje anbefaling)…”</blockquote>
+            <p class="author">- Navn, Frivillig i Ventilen [By]</p>
+          </article>
         </div>
-        <div>
-          <p>"Man giver noget til andre og får et sindsygt godt fællesskab mellem frivillige igen"</p>
-          <p>- Isabella, frivillig i Ventilen Odense</p>
-        </div>
-        <div>
-          <p>"Man giver noget til andre og får et sindsygt godt fællesskab mellem frivillige igen"</p>
-          <p>- Isabella, frivillig i Ventilen Odense</p>
-        </div>
+  
+        <!-- Next -->
+        <button class="carousel-nav next" aria-label="Næste">
+          <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+        </button>
+  
+        <!-- Dots -->
+        <div class="carousel-dots" role="tablist" aria-label="Slides"></div>
       </div>
-    </section>
+    </div>
+  </section>
+  
     <section class="frivillig">
         <h2>Frivillig i Ventilen</h2>
         <p>Som frivillig i Ventilen, planlægger og skaber du, sammen med andre frivillige, sociale aktiviteter for unge mellem 15-25 år, der føler sig ensomme. <br> Din opgave er, at sørge for, at alle føler sig velkomne, og at der altid er nogle at snakke med</p>
