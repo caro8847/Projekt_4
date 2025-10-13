@@ -627,7 +627,8 @@ html {
 .story-btn {
   display: inline-block;
   margin: 0 auto 18px;
-  padding: 12px 22px;
+  padding: 30px 55px;
+  font-size: 1.5rem;  
   font-weight: 700;
   border-radius: 999px;
   border: none;
