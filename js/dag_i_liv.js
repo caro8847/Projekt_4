@@ -1,46 +1,37 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const video = document.getElementById('customVideo');
-  const playBtn = document.getElementById('playButton');
+  const videoSets = [
+    { videoId: 'heroVideo', btnId: 'heroPlayButton' },
+    { videoId: 'customVideo', btnId: 'playButton' },
+  ];
 
-  if (!video || !playBtn) return;
+  videoSets.forEach(({ videoId, btnId }) => {
+    const video = document.getElementById(videoId);
+    const playBtn = document.getElementById(btnId);
+    if (!video || !playBtn) return;
 
-  // Ensure audio plays (requires a user gesture)
-  const playWithSound = async () => {
-    try {
-      video.muted = false;
-      // Some browsers need explicit call to load before play when preload is "auto"
-      // video.load(); // usually not needed, but safe to uncomment if required
-      await video.play();
-    } catch (err) {
-      // If autoplay with sound is blocked, show the button again
-      playBtn.classList.remove('hidden');
-      console.warn('Play failed:', err);
-    }
-  };
+    const playWithSound = async () => {
+      try {
+        video.muted = false;
+        await video.play();
+      } catch (err) {
+        playBtn.classList.remove('hidden');
+        console.warn(`Play failed for ${videoId}:`, err);
+      }
+    };
 
-  // Click the custom button to play/pause
-  playBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    if (video.paused) {
-      playWithSound();
-    } else {
-      video.pause();
-    }
+    playBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (video.paused) playWithSound();
+      else video.pause();
+    });
+
+    video.addEventListener('click', () => {
+      if (video.paused) playWithSound();
+      else video.pause();
+    });
+
+    video.addEventListener('play', () => playBtn.classList.add('hidden'));
+    video.addEventListener('pause', () => playBtn.classList.remove('hidden'));
+    video.addEventListener('ended', () => playBtn.classList.remove('hidden'));
   });
-
-  // Toggle by clicking the video (optional)
-  video.addEventListener('click', () => {
-    if (video.paused) {
-      playWithSound();
-    } else {
-      video.pause();
-    }
-  });
-
-  // Hide/show the overlay button based on state
-  video.addEventListener('play', () => playBtn.classList.add('hidden'));
-  video.addEventListener('pause', () => playBtn.classList.remove('hidden'));
-  video.addEventListener('ended', () => playBtn.classList.remove('hidden'));
-
-  // NOTE: No JS for the logo — the anchor + smooth-scroll CSS already handle it.
 });
