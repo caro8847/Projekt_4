@@ -1,203 +1,210 @@
 :root {
-    --brand-green: #C3E0C2;
-    --cta-blue: #2563eb;
-    --cta-blue-hover: #1d4ed8;
-    --text: #0f172a;
-    --maxw: 1100px;
-  }
-  
-  * { box-sizing: border-box; 
-    margin: 0; 
-    padding: 0; 
-  }
-  
-  body {
-    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
-    color: var(--text);
-    background: #fff;
-    line-height: 1.4;
-  }
-  
-  /* Header */
-  .topbar { background: var(--brand-green); }
-  
-  .container {
-    max-width: var(--maxw);
-    margin: 0 auto;
-    padding: 14px 16px;
-  }
-  
-  .nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-  }
-  
-  /* Logo */
-  .logo-slot {
-    display: flex;
-    align-items: center;
-  }
-  .logo-slot img {
-    height: 42px;       /* mobile size */
-    width: auto;
-    display: block;
-  }
-  
-  /* CTA Button */
-  .btn {
-    display: inline-block;
-    padding: 10px 18px;
-    font-weight: 600;
-    text-decoration: none;
-    background: var(--cta-blue);
-    color: #fff;
-    border-radius: 999px;
-    box-shadow: 0 6px 14px rgba(37,99,235,.35);
-    transition: transform .05s ease, background .15s ease;
-    white-space: nowrap;
-  }
-  .btn:hover { background: var(--cta-blue-hover); }
-  .btn:active { transform: translateY(1px); }
-  
-  /* Title section (moved from .hero) */
+  --brand-green: #C3E0C2;
+  --cta-blue: #2563eb;
+  --cta-blue-hover: #1d4ed8;
+  --text: #0f172a;
+  --maxw: 1100px;
+}
+
+* { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+
+body {
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: var(--text);
+  background: #fff;
+  line-height: 1.4;
+}
+
+/* Header */
+.topbar { 
+  background: var(--brand-green); 
+}
+
+.container {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 14px 16px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+/* Logo */
+.logo-slot {
+  display: flex;
+  align-items: center;
+}
+.logo-slot img {
+  height: 42px;       /* mobile size */
+  width: auto;
+  display: block;
+}
+
+/* CTA Button */
+.btn {
+  display: inline-block;
+  padding: 10px 18px;
+  font-weight: 600;
+  text-decoration: none;
+  background: var(--cta-blue);
+  color: #fff;
+  border-radius: 999px;
+  box-shadow: 0 6px 14px rgba(37,99,235,.35);
+  transition: transform .05s ease, background .15s ease;
+  white-space: nowrap;
+}
+.btn:hover { 
+  background: var(--cta-blue-hover); 
+}
+.btn:active { 
+  transform: translateY(1px); 
+}
+
+/* Title section (moved from .hero) */
 .main-title {
-    background: #fff;
-    text-align: center;
-    padding-top: 32px;
-    padding-bottom: 40px;
-  }
-  
-  .main-title h1 {
-    font-weight: 800;
-    font-size: 22px;
-    letter-spacing: .2px;
-    /* If you want to keep orange, use var(--heading-orange) instead */
-    color: var(--text);
-    line-height: 1.3;
-  }
-  
-  /* Responsive */
-  @media (min-width:640px) {
-    .container { padding-left: 24px; padding-right: 24px; }
-    .logo-slot img { height: 56px; }
-    .main-title h1 { font-size: 28px; }  /* was .hero h1 */
-  }
-  
-  @media (min-width:960px) {
-    .container { padding-left: 28px; padding-right: 28px; }
-    .main-title { padding-top: 50px; padding-bottom: 50px; }  /* was .hero .container */
-    .main-title h1 { font-size: 34px; }  /* was .hero h1 */
-  }
+  background: #fff;
+  text-align: center;
+  padding-top: 32px;
+  padding-bottom: 40px;
+}
+
+.main-title h1 {
+  font-weight: 800;
+  font-size: 22px;
+  letter-spacing: .2px;
+  /* If you want to keep orange, use var(--heading-orange) instead */
+  color: var(--text);
+  line-height: 1.3;
+}
+
+/* Responsive */
+@media (min-width:640px) {
+  .container { padding-left: 24px; padding-right: 24px; }
+  .logo-slot img { height: 56px; }
+  .main-title h1 { font-size: 28px; }  /* was .hero h1 */
+}
+
+@media (min-width:960px) {
+  .container { padding-left: 28px; padding-right: 28px; }
+  .main-title { padding-top: 50px; padding-bottom: 50px; }  /* was .hero .container */
+  .main-title h1 { font-size: 34px; }  /* was .hero h1 */
+}
 /* ===== Footer (always 3 columns) ===== */
 .footer {
-    background: var(--brand-green, #CFE7D2);
-    color: var(--text, #0f172a);
-    padding: 28px 16px 32px;
-    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
-  }
-  
-  .footer-container {
-    max-width: var(--maxw, 1100px);
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1.4fr 1fr auto; /* always 3 columns */
-    column-gap: 28px;
-    align-items: start;
-  }
-  
-  /* Left column: contact info */
-  .footer-left {
-    display: grid;
-    gap: 14px;
-    font-size: 0.9rem; /* smaller text */
-  }
-  .footer-row {
-    display: grid;
-    grid-template-columns: 22px 1fr;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-    color: inherit;
-  }
-  .footer-ico {
-    font-size: 18px;
-    line-height: 1;
-  }
-  .footer a {
-    min-height: 36px;
-  }
-  
-  /* Middle column: navigation links */
-  .footer-middle {
-    display: grid;
-    gap: 10px;
-    align-content: start;
-  }
-  .footer-middle a {
-    color: inherit;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.95rem;
-  }
-  
-  /* Right column: social icons stacked */
-  .footer-right {
-    display: grid;
-    gap: 18px;
-    justify-items: end;
-    align-content: start;
-  }
-  .footer-right a {
-    color: inherit;
-    text-decoration: none;
-    display: inline-grid;
-    place-items: center;
-  }
-  
-  /* Instagram: remove extra border — just the outline icon itself */
-  .social-ig {
-    width: auto;
-    height: auto;
-    border: none; /* remove border entirely */
-  }
-  .social-ig i {
-    font-size: 34px; /* balanced size */
-  }
-  
-  /* Facebook: slightly smaller to match visual balance */
-  .social-fb i {
-    font-size: 38px;
-  }
-  
-  /* Optional safeguard for small screens */
-  .footer-left .footer-row span {
-    word-break: break-word;
-  }
+  background: var(--brand-green, #CFE7D2);
+  color: var(--text, #0f172a);
+  padding: 28px 16px 32px;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.footer-container {
+  max-width: var(--maxw, 1100px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr auto; /* always 3 columns */
+  column-gap: 28px;
+  align-items: start;
+}
+
+/* Left column: contact info */
+.footer-left {
+  display: grid;
+  gap: 14px;
+  font-size: 0.9rem; /* smaller text */
+}
+.footer-row {
+  display: grid;
+  grid-template-columns: 22px 1fr;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+}
+.footer-ico {
+  font-size: 18px;
+  line-height: 1;
+}
+.footer a {
+  min-height: 36px;
+}
+
+/* Middle column: navigation links */
+.footer-middle {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+}
+.footer-middle a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* Right column: social icons stacked */
+.footer-right {
+  display: grid;
+  gap: 18px;
+  justify-items: end;
+  align-content: start;
+}
+.footer-right a {
+  color: inherit;
+  text-decoration: none;
+  display: inline-grid;
+  place-items: center;
+}
+
+/* Instagram: remove extra border — just the outline icon itself */
+.social-ig {
+  width: auto;
+  height: auto;
+  border: none; /* remove border entirely */
+}
+.social-ig i {
+  font-size: 34px; /* balanced size */
+}
+
+/* Facebook: slightly smaller to match visual balance */
+.social-fb i {
+  font-size: 38px;
+}
+
+/* Optional safeguard for small screens */
+.footer-left .footer-row span {
+  word-break: break-word;
+}
 /* Self-hosted video styling */
 .video-section {
-    width: 100%;
-    max-width: 500px;
-    margin: 32px auto;
-    padding: 0 24px; /* white space on the sides */
+  width: 100%;
+  max-width: 500px;
+  margin: 32px auto;
+  padding: 0 24px; /* white space on the sides */
+}
+
+.custom-video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  background: #000;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  object-fit: cover;
+}
+
+/* Adjust spacing for small screens */
+@media (max-width: 480px) {
+  .video-section {
+    margin: 24px auto;
+    padding: 0 16px;
   }
-  
-  .custom-video {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 12px;
-    background: #000;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    object-fit: cover;
-  }
-  
-  /* Adjust spacing for small screens */
-  @media (max-width: 480px) {
-    .video-section {
-      margin: 24px auto;
-      padding: 0 16px;
-    }
-  }
+}
   
