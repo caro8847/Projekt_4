@@ -3,6 +3,7 @@
 <head>
     <script src="js/play_button_starts_vids.js" defer></script>
     <script src="js/carousel.js" defer></script>
+    <script src="js/story_rotator.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <meta charset="utf-8" />
@@ -99,6 +100,19 @@
       </section>
     </div>
   </section>
+
+  <!-- ===== Story Rotator (button + text + image) ===== -->
+<section class="story-rotator container" id="storyRotator">
+  <button class="story-btn" id="storyNext" aria-label="Tidsknappen">
+    Tidsknappen
+  </button>
+
+  <div class="story-output">
+    <p id="storyText" aria-live="polite"></p>
+    <img id="storyImage" alt="" loading="lazy" />
+  </div>
+</section>
+
   
 
   
