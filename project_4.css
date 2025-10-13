@@ -258,7 +258,7 @@ body {
 
   }
 
-  .btn-wavy:: {
+  .btn-wavy::before {
     content:"";
     position: absolute;
     inset: -6px;
