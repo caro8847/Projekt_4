@@ -679,3 +679,32 @@ html {
   .story-rotator { padding: 40px 16px 56px; }
   #storyImage { border-radius: 16px; }
 }
+/* ===== Story Rotator: desktop side-by-side with text on the right ===== */
+@media (min-width: 960px) {
+  .story-rotator .story-output {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 36px;
+    text-align: left;
+    flex-direction: row-reverse;   /* puts image first, text second */
+  }
+
+  /* Image: half width on desktop */
+  #storyImage {
+    width: 50%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 8px 22px rgba(0,0,0,.12);
+    flex: 0 0 50%;
+  }
+
+  /* Text: to the right of the image */
+  #storyText {
+    margin: 0;
+    max-width: 52ch;
+    align-self: center;
+  }
+}
