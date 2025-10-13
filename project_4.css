@@ -637,7 +637,7 @@ html {
   cursor: pointer;
   transition: transform .05s ease, background .15s ease;
 }
-.story-btn:hover { background: var(--cta-blue-hover); }
+.story-btn:hover { background: #EA620E; }
 .story-btn:active { transform: translateY(1px); }
 .story-rotator .story-btn { display: block; text-align: center; }
 
