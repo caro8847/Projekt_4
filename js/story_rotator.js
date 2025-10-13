@@ -10,29 +10,29 @@
     // TODO: swap these texts + image paths with your real content
     const items = [
       {
-        text: 'Som frivillig starter jeg aftenen med at gøre klar — kaffe på kanden og spil på bordet.',
+        text: '"Se 4 afsnit af Friends... igen."',
         img:  'images/rotator_1.webp',
-        alt:  'Frivillige forbereder aftenaktiviteter med kaffe og brætspil'
+        alt:  '"Se 4 afsnit af Friends... igen."'
       },
       {
-        text: 'De første unge kommer — vi smalltalker, griner og sætter en aktivitet i gang.',
+        text: '"Scrolle 3,2 kilometer ned i dit Instagram-feed."',
         img:  'images/rotator_2.webp',
-        alt:  'Små grupper af unge der taler og griner ved et bord'
+        alt:  '"Scrolle 3,2 kilometer ned i dit Instagram-feed."'
       },
       {
-        text: 'Midt i det hele opstår der samtaler, der betyder noget — om ensomhed, mod og hverdagsglimt.',
+        text: '"Overtænke en besked, du sendte i går."',
         img:  'images/rotator_3.webp',
-        alt:  'To personer i en rolig samtale i et hjørne'
+        alt:  '"Overtænke en besked, du sendte i går."'
       },
       {
-        text: 'Vi spiller bowling/kort/kreativt — fællesskabet vokser i det små.',
+        text: '"Bruge 1 time på at vælge en film og 1 time på at se den."',
         img:  'images/rotator_4.webp',
-        alt:  'Gruppeaktivitet i gang — spil og smil'
+        alt:  '"Bruge 1 time på at vælge en film og 1 time på at se den."'
       },
       {
-        text: 'Til sidst runder vi af, rydder op og siger på gensyn — og man går hjem lettere om hjertet.',
+        text: '"Du kan også bruge 2 timer OM MÅNEDEN på at gøre en reel forskel for en ung. Hvad tæller mest?"',
         img:  'images/rotator_5.webp',
-        alt:  'Aftenen slutter, folk siger farvel i døren'
+        alt:  '"Du kan også bruge 2 timer OM MÅNEDEN på at gøre en reel forskel for en ung. Hvad tæller mest?"'
       }
     ];
   
