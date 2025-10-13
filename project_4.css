@@ -2,7 +2,6 @@
     --brand-green: #CFE7D2;
     --cta-blue: #2563eb;
     --cta-blue-hover: #1d4ed8;
-    --heading-orange: #E86A1E;
     --text: #0f172a;
     --maxw: 1100px;
   }
@@ -59,33 +58,33 @@
   .btn:hover { background: var(--cta-blue-hover); }
   .btn:active { transform: translateY(1px); }
   
-  /* Hero */
-  .hero {
+  /* Title section (moved from .hero) */
+.main-title {
     background: #fff;
-    text-align: center;           /* center headline */
-  }
-  .hero .container {
+    text-align: center;
     padding-top: 32px;
     padding-bottom: 40px;
   }
-  .hero h1 {
+  
+  .main-title h1 {
     font-weight: 800;
     font-size: 22px;
     letter-spacing: .2px;
-    color: var(--heading-orange);
+    /* If you want to keep orange, use var(--heading-orange) instead */
+    color: var(--text);
     line-height: 1.3;
   }
   
   /* Responsive */
   @media (min-width:640px) {
     .container { padding-left: 24px; padding-right: 24px; }
-    .logo-slot img { height: 56px; }  /* larger on tablet/desktop */
-    .hero h1 { font-size: 28px; }
+    .logo-slot img { height: 56px; }
+    .main-title h1 { font-size: 28px; }  /* was .hero h1 */
   }
   
   @media (min-width:960px) {
     .container { padding-left: 28px; padding-right: 28px; }
-    .hero .container { padding-top: 50px; padding-bottom: 50px; }
-    .hero h1 { font-size: 34px; }
+    .main-title { padding-top: 50px; padding-bottom: 50px; }  /* was .hero .container */
+    .main-title h1 { font-size: 34px; }  /* was .hero h1 */
   }
   
