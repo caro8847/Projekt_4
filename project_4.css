@@ -451,9 +451,26 @@ html {
     .hero-grid .carousel .quote { text-align: left; margin-left: 0; margin-right: 0; max-width: 38ch; }
     .hero-grid .author { text-align: left; }
     .hero-grid .carousel-dots { justify-content: flex-start; }
-    .hero-grid .carousel-nav.prev { left: -6px; }
-    .hero-grid .carousel-nav.next { right: -6px; }
+    .hero-grid .carousel-nav.prev { left: 1px; }
+    .hero-grid .carousel-nav.next { right: 1px; }
+    
   }
+  /* Force center text on all carousel slides */
+.carousel .slide,
+.carousel .quote,
+.carousel .author {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Make sure the quote block width centers nicely */
+.carousel .quote {
+  display: block;
+  max-width: 32ch; /* optional: adjust width */
+}
+
+  
 
   .mission{
     max-width: 780px;
