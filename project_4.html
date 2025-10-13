@@ -61,18 +61,30 @@
         <p>Som frivillig i Ventilen, planlægger og skaber du, sammen med andre frivillige, sociale aktiviteter for unge mellem 15-25 år, der føler sig ensomme. <br> Din opgave er, at sørge for, at alle føler sig velkomne, og at der altid er nogle at snakke med</p>
         <p>Hver vagt er forskellig, og der laves diverse aktiviteter så som: <span class="activity">Bowling</span></p>
         <section>
-            <h2>En dag i mit liv som frivillig i Ventilen</h2>
-            <div class="video-section">
-                <video 
-                  controls
-                  preload="auto"
-                  playsinline
-                  muted
-                  class="custom-video">
-                  <source src="videos/dag_i_liv.mp4" type="video/mp4">
-                  Din browser understøtter ikke videoafspilning.
-                </video>
-              </div>
+            
+            <section class="frivillig">
+                <h2>En dag i mit liv som frivillig i Ventilen</h2>
+                <div class="container">
+                  <div class="video-section">
+                    <div class="video-wrapper">
+                      <video 
+                        id="customVideo"
+                        preload="auto"
+                        playsinline
+                        class="custom-video">
+                        <source src="videos/dag_i_liv.mp4" type="video/mp4">
+                        Din browser understøtter ikke videoafspilning.
+                      </video>
+              
+                      <button class="play-button" id="playButton" aria-label="Afspil/Pause">
+                        <i class="fa-solid fa-play"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </section>
+                
+              
               
               
             <p>Hos Ventilen Odense får du venner, erfaring og meningsfulde oplevelser, mens du hjælper unge ud af ensomhed</p>
@@ -150,6 +162,32 @@
       </div>
     </div>
   </footer>
+  <script>
+    const video = document.getElementById('customVideo');
+    const playBtn = document.getElementById('playButton');
+  
+    // Toggle play/pause
+    function togglePlay() {
+      if (video.paused) {
+        video.play();
+        playBtn.classList.add('hidden');   // hide icon when playing
+      } else {
+        video.pause();
+        playBtn.classList.remove('hidden'); // show icon when paused
+      }
+    }
+  
+    // Click overlay button
+    playBtn.addEventListener('click', togglePlay);
+  
+    // Click directly on video also toggles play/pause
+    video.addEventListener('click', togglePlay);
+  
+    // Keep icon state in sync with actual playback
+    video.addEventListener('play', () => playBtn.classList.add('hidden'));
+    video.addEventListener('pause', () => playBtn.classList.remove('hidden'));
+    video.addEventListener('ended', () => playBtn.classList.remove('hidden')); // show again when finished
+  </script>
   
 </body>
 </html>
