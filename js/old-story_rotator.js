@@ -1,5 +1,5 @@
-// js/story_rotator.js (basic version with let)
-(function () {
+// js/story_rotator.js
+(() => {
   const rotatorRoot = document.getElementById('storyRotator');
   if (!rotatorRoot) return;
 
@@ -7,16 +7,15 @@
   const text  = document.getElementById('storyText');
   const image = document.getElementById('storyImage');
 
-  // The two headings inside the rotator
-  const titles = rotatorRoot.getElementsByClassName('story-title');
-  const titlePrimary   = titles.length > 0 ? titles[0] : null; // "Tid er det, vi har mindst af..."
-  const titleSecondary = titles.length > 1 ? titles[1] : null; // "Eller er det?"
+  // Grab the two headings inside the rotator
+  const titles = rotatorRoot.querySelectorAll('.story-title');
+  const titlePrimary   = titles[0] || null; // "Tid er det, vi har mindst af..."
+  const titleSecondary = titles[1] || null; // "Eller er det?"
 
   // Start hidden: nothing shown until first click
   if (text)  text.style.display  = 'none';
   if (image) image.style.display = 'none';
 
-  // Items (objects in an array)
   const items = [
     { text: '"Se 4 afsnit af Friends... igen."', img: 'images/friends.gif', alt: '"Se 4 afsnit af Friends... igen."' },
     { text: '"Scrolle 3,2 kilometer ned i dit Instagram-feed."', img: 'images/instagram2hs.gif', alt: '"Scrolle 3,2 kilometer ned i dit Instagram-feed."' },
@@ -25,15 +24,18 @@
     { text: '"Du kan også bruge 2 timer OM MÅNEDEN på at gøre en reel forskel for en ung. Hvad tæller mest?"', img: 'images/ventileninstead.gif', alt: '"Du kan også bruge 2 timer OM MÅNEDEN på at gøre en reel forskel for en ung. Hvad tæller mest?"' }
   ];
 
-  // State
   let index = -1;
   let hasRendered = false;
   let firstClickHandled = false;
 
   function render(i) {
-    if (i < 0 || i >= items.length) return;
-
     const item = items[i];
+    if (!item) return;
+
+    text.classList.remove('fade-in');
+    image.classList.remove('fade-in');
+    void text.offsetWidth; // reflow
+
     text.textContent = item.text;
     image.src = item.img;
     image.alt = item.alt;
@@ -43,33 +45,37 @@
       image.style.display = '';
       hasRendered = true;
     }
+
+    text.classList.add('fade-in');
+    image.classList.add('fade-in');
   }
 
-  // Preload images (loop)
-  for (let i = 0; i < items.length; i++) {
-    const pre = new Image();
-    pre.src = items[i].img;
-  }
+  // Preload images
+  items.forEach(it => { const img = new Image(); img.src = it.img; });
 
-  // Click handler (basic DOM)
-  btn.onclick = function () {
-    // First click: change titles
+  btn.addEventListener('click', () => {
+    // Do these only on the very first click
     if (!firstClickHandled) {
       if (titlePrimary) {
         titlePrimary.textContent = 'Hvad kan du nå på 2 timer?';
-        titlePrimary.style.color = '#1A3DFF';
+        titlePrimary.style.color = '#1A3DFF'; // make it blue
       }
-      if (titleSecondary && titleSecondary.parentNode) {
-        titleSecondary.parentNode.removeChild(titleSecondary);
+      if (titleSecondary) {
+        // remove the "Eller er det?" title
+        titleSecondary.remove(); // or: titleSecondary.style.display = 'none';
       }
       firstClickHandled = true;
     }
 
-    // Rotate
-    index = index + 1;
-    if (index >= items.length) {
-      index = 0;
-    }
+    index = (index + 1) % items.length;
     render(index);
-  };
+  });
+
+  // Keyboard accessibility
+  btn.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      btn.click();
+    }
+  });
 })();
