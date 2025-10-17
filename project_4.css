@@ -709,3 +709,14 @@ html {
     align-self: center;
   }
 }
+/* Reuse the main title look */
+.story-title {
+  font-family: var(--font-heading, 'Unbounded', sans-serif);
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: .2px;
+  color: var(--orange);
+  text-align: center;
+  margin: 0 0 12px;
+  font-size: clamp(22px, 3.2vw, 34px); /* replaces the 22/28/34px media steps */
+}
