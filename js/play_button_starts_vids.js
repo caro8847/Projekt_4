@@ -1,54 +1,76 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const videoSets = [
-    { videoId: 'heroVideo', btnId: 'heroPlayButton' },
-    { videoId: 'customVideo', btnId: 'playButton' },
+document.addEventListener("DOMContentLoaded", function() {
+  // === Arrays and objects ===
+  let videoSets = [
+    { videoId: "heroVideo", btnId: "heroPlayButton" },
+    { videoId: "customVideo", btnId: "playButton" }
   ];
 
-  videoSets.forEach(({ videoId, btnId }) => {
-    const video = document.getElementById(videoId);
-    const playBtn = document.getElementById(btnId);
-    if (!video || !playBtn) return;
+  // === Loop through all video sets ===
+  for (let i = 0; i < videoSets.length; i++) {
+    let videoInfo = videoSets[i];
+    let video = document.getElementById(videoInfo.videoId);
+    let playBtn = document.getElementById(videoInfo.btnId);
 
-    const playWithSound = async () => {
-      try {
-        video.muted = false;
-        await video.play();
-      } catch (err) {
-        playBtn.classList.remove('hidden');
-        console.warn(`Play failed for ${videoId}:`, err);
+    if (!video || !playBtn) {
+      continue;
+    }
+
+    // === Function to play video with sound ===
+    function playWithSound(v, btn) {
+      v.muted = false;
+      let playPromise = v.play();
+
+      if (playPromise !== undefined) {
+        playPromise.catch(function(err) {
+          btn.classList.remove("hidden");
+          console.log("Play failed for " + v.id + ":", err);
+        });
       }
-    };
+    }
 
-    playBtn.addEventListener('click', (e) => {
+    // === Button click ===
+    playBtn.addEventListener("click", function(e) {
       e.preventDefault();
-      if (video.paused) playWithSound();
-      else video.pause();
+      if (video.paused) {
+        playWithSound(video, playBtn);
+      } else {
+        video.pause();
+      }
     });
 
-    video.addEventListener('click', () => {
-      if (video.paused) playWithSound();
-      else video.pause();
+    // === Video click ===
+    video.addEventListener("click", function() {
+      if (video.paused) {
+        playWithSound(video, playBtn);
+      } else {
+        video.pause();
+      }
     });
 
-    video.addEventListener('play', () => playBtn.classList.add('hidden'));
-    video.addEventListener('pause', () => playBtn.classList.remove('hidden'));
-    video.addEventListener('ended', () => playBtn.classList.remove('hidden'));
-  });
+    // === Show/hide button ===
+    video.addEventListener("play", function() {
+      playBtn.classList.add("hidden");
+    });
+    video.addEventListener("pause", function() {
+      playBtn.classList.remove("hidden");
+    });
+    video.addEventListener("ended", function() {
+      playBtn.classList.remove("hidden");
+    });
+  }
 
   // === Pause videos when out of view ===
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        const video = entry.target;
-        if (!entry.isIntersecting && !video.paused) {
-          video.pause();
-        }
-      });
-    },
-    {
-      threshold: 0.25, // triggers when less than 25% of video is visible
-    }
-  );
+  let videos = document.getElementsByClassName("custom-video");
 
-  document.querySelectorAll('video.custom-video').forEach((v) => observer.observe(v));
+  function checkVideosInView() {
+    for (let j = 0; j < videos.length; j++) {
+      let rect = videos[j].getBoundingClientRect();
+      let visible = rect.top < window.innerHeight * 0.75 && rect.bottom > 0;
+      if (!visible && !videos[j].paused) {
+        videos[j].pause();
+      }
+    }
+  }
+
+  window.addEventListener("scroll", checkVideosInView);
 });
