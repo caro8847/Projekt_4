@@ -64,58 +64,19 @@
         </div>
       </section>
   
-      <!-- RIGHT: testimonials carousel -->
-      <section class="gallery-section">
-        <div class="carousel" id="testiCarousel" aria-roledescription="carousel">
-          
-  
-          <div class="carousel-track">
-            <article class="slide is-active">
-              <img class="avatar" src="images/person_1.webp" alt="Isabella" loading="lazy">
-              <blockquote class="quote">“Man giver noget til andre og får et sindssygt godt fællesskab mellem frivillige igen”</blockquote>
-              <p class="author">- Isabella, Frivillig i Ventilen Odense</p>
-            </article>
-  
-            <article class="slide">
-              <img class="avatar" src="images/person_2.webp" alt="Navn på frivillig" loading="lazy">
-              <blockquote class="quote">“(Udskift med din næste anbefaling)…”</blockquote>
-              <p class="author">- Navn, Frivillig i Ventilen [By]</p>
-            </article>
-  
-            <article class="slide">
-              <img class="avatar" src="images/person_3.webp" alt="Navn på frivillig" loading="lazy">
-              <blockquote class="quote">“(Udskift med din tredje anbefaling)…”</blockquote>
-              <p class="author">- Navn, Frivillig i Ventilen [By]</p>
-            </article>
-          </div>
-          <button class="carousel-nav prev" aria-label="Forrige">
-            <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
-          </button>
-  
-          <button class="carousel-nav next" aria-label="Næste">
-            <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
-          </button>
-  
-          <div class="carousel-dots" role="tablist" aria-label="Slides"></div>
+      <!--Carousel-->
+      <div id="galleri">
+        <div class="galleri-track">
+            <img src="person_1.webp" alt="slide 1">
+            <img scr="person_2.webp" alt="slide 2">
+            <img scr="person_3.webp" alt="slide 3">
         </div>
-      </section>
-    </div>
-  </section>
 
-  <!-- ===== Story Rotator (button + text + image) ===== -->
-<section class="story-rotator container" id="storyRotator">
-  <h2 class="story-title">Tid er det, vi har mindst af...</h2>
-  <h2 class="story-title">Eller er det?</h2>
-  <br>
-  <button class="story-btn" id="storyNext" aria-label="Tidsknappen">
-    Tidsknappen
-  </button>
-
-  <div class="story-output">
-    <p id="storyText" aria-live="polite"></p>
-    <img id="storyImage" alt="" loading="lazy" />
-  </div>
-</section>
+        <div class="galleri-buttons">
+            <button class="galleri-prev"> &#9664; Forrige</button>
+            <button class="galleri-next">Næste &#9654;</button>
+        </div>
+      </div>
 
   
 
