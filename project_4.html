@@ -2,7 +2,7 @@
 <html lang="da">
 <head>
     <script src="js/play_button_starts_vids.js" defer></script>
-    <script src="js/carousel.js" defer></script>
+    <script src="js/galleri.js" defer></script>
     <script src="js/story_rotator.js" defer></script>
     <script src="js/footer.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -64,17 +64,28 @@
         </div>
       </section>
   
-      <!--Carousel-->
+      <!--Galleri-->
       <div id="galleri">
         <div class="galleri-track">
-            <img src="person_1.webp" alt="slide 1">
-            <img scr="person_2.webp" alt="slide 2">
-            <img scr="person_3.webp" alt="slide 3">
+            <figure class="slide">
+                <img src="images/Isabella.jpg" alt="Isabella">
+                <figcaption>Isabella – elsker at tage billeder i naturen</figcaption>
+            </figure>
+
+            <figure class="slide">
+                <img src="images/Simon.jpg" alt="Simon">
+                <figcaption>Simon – kreativ og altid klar med et smil</figcaption>
+            </figure>
+
+            <figure class="slide">
+                <img src="images/Marie.jpg" alt="Marie">
+                <figcaption>Marie – arbejder med digital design</figcaption>
+            </figure>
         </div>
 
-        <div class="galleri-buttons">
-            <button class="galleri-prev"> &#9664; Forrige</button>
-            <button class="galleri-next">Næste &#9654;</button>
+    
+        <button class="galleri-prev"> &#9664; Forrige</button>
+        <button class="galleri-next">Næste &#9654;</button>
         </div>
       </div>
 

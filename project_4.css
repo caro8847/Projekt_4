@@ -375,7 +375,7 @@ html {
     width: 300px;
     margin: 0 auto;
     overflow: hidden;
-    border: 2px solid #333;
+    border: none;
     border-radius: 8px;
     background: white;
     position: relative;

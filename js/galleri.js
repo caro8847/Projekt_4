@@ -1,59 +1,34 @@
-// js/carousel.js
-(() => {
-    const root = document.getElementById('testiCarousel');
-    if (!root) return;
-  
-    const track   = root.querySelector('.carousel-track');
-    const slides  = Array.from(track.children);
-    const prevBtn = root.querySelector('.carousel-nav.prev');
-    const nextBtn = root.querySelector('.carousel-nav.next');
-    const dotsWrap= root.querySelector('.carousel-dots');
-  
-    let index = slides.findIndex(s => s.classList.contains('is-active'));
-    if (index < 0) index = 0;
-  
-    function setIndex(i) {
-      index = (i + slides.length) % slides.length; // wrap around
-      track.style.transform = `translateX(${-index * 100}%)`;
-      slides.forEach((s, j) => s.classList.toggle('is-active', j === index));
-      if (dotsWrap) {
-        dotsWrap.querySelectorAll('button').forEach((b, j) => {
-          b.classList.toggle('is-active', j === index);
-        });
-      }
+//js/galleri.js
+var root = document.getElementById("galleri");
+if (root) {
+    var track = root.querySelector(".galleri-track");
+    var slides = track.children;
+    var prevBtn = root.querySelector(".galleri-prev");
+    var nextBtn = root.querySelector(".galleri-next");
+    var index = 0;
+
+    function showSlide(i) {
+        if (i < 0) {
+            i = slides.length - 1;
+        } else if (i >= slides.length) {
+            i = 0;
+        }
+        index = i;
+
+        for (var n = 0; n < slides.length; n++) {
+            slides[n].style.display = "none";
+        }
+
+        slides[index].style.display = "block";
     }
-  
-    function buildDots() {
-      if (!dotsWrap) return;
-      dotsWrap.innerHTML = '';
-      slides.forEach((_, i) => {
-        const b = document.createElement('button');
-        b.type = 'button';
-        b.setAttribute('aria-label', `Gå til slide ${i + 1}`);
-        b.addEventListener('click', () => setIndex(i));
-        dotsWrap.appendChild(b);
-      });
-    }
-  
-    buildDots();
-    setIndex(index);
-  
-    prevBtn?.addEventListener('click', (e) => {
-      e.preventDefault(); e.stopPropagation();
-      setIndex(index - 1);
+
+    prevBtn.addEventListener("click", function () {
+        showSlide(index - 1);
     });
-  
-    nextBtn?.addEventListener('click', (e) => {
-      e.preventDefault(); e.stopPropagation();
-      setIndex(index + 1);
+
+    nextBtn.addEventListener("click", function () {
+        showSlide(index + 1);
     });
-  
-    // Ensure each slide spans the viewport width of the carousel root
-    function syncWidths() {
-      const w = root.clientWidth;
-      slides.forEach(s => (s.style.width = `${w}px`));
-    }
-    window.addEventListener('resize', syncWidths);
-    syncWidths();
-  })();
-  
+
+    showSlide(index);
+}
