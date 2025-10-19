@@ -370,70 +370,129 @@ html {
       max-width: 420px; /* make hero video stand out a bit */
     }
   }
+
+/* Baggrund som i eksempel 2 */
+:root{
+  --bg: #fff;
+  --card: #f6fbff;
+  --text: #2b2f33;
+  --muted: #6c7784;
+}
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+/* centrer “kortet” */
+.scene{
+  min-height:100vh;
+  display:grid;
+  place-items:center;
+  padding:24px;
+}
+
+/* selve kortet */
+.card{
+  width:min(760px, 92vw);
+  background: var(--card);
+  border-radius:16px;
+  padding:56px 72px 64px;
+  position:relative;
+  box-shadow: 0 10px 30px rgba(0,0,0,.06);
+}
+
+/* track + slides */
+.galleri-track{
+  position:relative;
+}
+.slide{
+  display:none;               /* JS viser ét ad gangen */
+  text-align:center;
+  margin:0;
+  padding:0;
+}
+.slide.is-active{ display:block; }
+
+/* rund avatar */
+.avatar{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  object-fit:cover;
+  display:block;
+  margin:0 auto 24px;
+  box-shadow:0 6px 18px rgba(0,0,0,.12);
+}
+
+/* citattekst */
+.quote{
+  margin:0 auto 20px;
+  max-width:52ch;
+  line-height:1.6;
+  font-size:1.06rem;
+  color: var(--text);
+}
+.quote::before,
+.quote::after{
+  content:"“";
+  color:var(--orange);
+  font-size:1.6rem;
+  margin:0 .2rem;
+}
+.quote::after{ content:"”"; }
+
+/* navn + rolle */
+.person{ display:flex; flex-direction:column; gap:6px; }
+.name{ font-size:1.1rem; }
+.role{ color:var(--muted); font-size:.9rem; }
+
+/* pile i siderne (runde, semitransparente) */
+.galleri-prev, .galleri-next{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  width:44px; height:44px;
+  border-radius:50%;
+  border:1px solid rgba(0,0,0,.08);
+  background:#ffffffcc;      /* hvid m. lidt gennemsigtighed */
+  box-shadow:0 6px 18px rgba(0,0,0,.08);
+  font-size:26px;
+  line-height:44px;
+  text-align:center;
+  cursor:pointer;
+  transition:.2s;
+}
+.galleri-prev{ left:-22px; } /* halvt udenfor kortet */
+.galleri-next{ right:-22px; }
+.galleri-prev:hover, .galleri-next:hover{
+  background:#fff;
+  transform:translateY(-50%) scale(1.05);
+}
+
+/* dots */
+.dots{
+  display:flex;
+  gap:8px;
+  justify-content:center;
+  margin-top:22px;
+}
+.dots button{
+  width:8px; height:8px; border-radius:50%;
+  border:none; cursor:pointer;
+  background:#c9d6e6;
+}
+.dots button.is-active{ background: var(--orange); }
+
+/* responsiv polstring på smalle skærme */
+@media (max-width:640px){
+  .card{ padding:40px 24px 48px; }
+}
   
-  #galleri {
-    width: 300px;
-    margin: 0 auto;
-    overflow: hidden;
-    border: none;
-    border-radius: 8px;
-    background: white;
-    position: relative;
-  }
-
-  .galleri-track {
-    display: flex;
-    transition: transform 0.5s ease;
-  }
-
-  .galleri-track img {
-    width: 100%;
-    display: none;
-  }
-
-  .galleri-buttons {
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-  }
-
-  .galleri-buttons button {
-    background-color: #ffd54f;
-    border: none;
-    padding: 8px 12px;
-    cursor: pointer;
-    font-weight: bold;
-    border-radius: 5px;
-  }
-
-  .galleri-buttons button:hover {
-    background-color: #ffca28;
-  }
-
   
-  /* tablet up: let quote breathe slightly */
-  @media (min-width:640px){
-    .quote { font-size: 20px; max-width: 32ch; }
-    .avatar { width: 78px; height: 78px; }
-  }
-  /* ===== Desktop: video left, testimonials right (inside .hero-grid) ===== */
-@media (min-width: 960px) {
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 420px 1fr; /* left fixed to video width, right flexible */
-      gap: 36px;
-      align-items: center; /* center the two columns vertically */
-      padding-top: 28px;
-      padding-bottom: 12px;
-      
-    }
-
-    /* Optional: make right column (carousel) a bit narrower for nicer balance */
-    .hero-grid .gallery-section { max-width: 520px; }
-  
-    /* Adjust top/bottom spacing so it's balanced */
-    .hero-cluster { padding: 40px 0; }
   
     /* Make the hero video tidy in its column */
     .hero-grid .video-section {
@@ -457,7 +516,6 @@ html {
     .hero-grid .carousel-nav.prev { left: 1px; }
     .hero-grid .carousel-nav.next { right: 1px; }
     
-  }
   /* Force center text on all carousel slides */
 .carousel .slide,
 .carousel .quote,

@@ -64,32 +64,57 @@
         </div>
       </section>
   
-      <!--Galleri-->
-      <div id="galleri">
-        <div class="galleri-track">
-            <figure class="slide">
-                <img src="images/Isabella.jpg" alt="Isabella">
-                <figcaption>Isabella – elsker at tage billeder i naturen</figcaption>
-            </figure>
 
-            <figure class="slide">
-                <img src="images/Simon.jpg" alt="Simon">
-                <figcaption>Simon – kreativ og altid klar med et smil</figcaption>
-            </figure>
 
-            <figure class="slide">
-                <img src="images/Marie.jpg" alt="Marie">
-                <figcaption>Marie – arbejder med digital design</figcaption>
-            </figure>
-        </div>
+  <div class="scene">
+    <div id="galleri" class="card">
+      <div class="galleri-track">
 
-    
-        <button class="galleri-prev"> &#9664; Forrige</button>
-        <button class="galleri-next">Næste &#9654;</button>
-        </div>
+        <!-- SLIDE 1 -->
+        <figure class="slide">
+          <img class="avatar" src="images/Isabella.jpg" alt="Isabella">
+          <blockquote class="quote">
+            Your coffee hits the spot every time. Thank you for the experience of pure, delicious coffee masterfully roasted!
+          </blockquote>
+          <div class="person">
+            <strong class="name">Isabella Jensen</strong>
+            <span class="role">Marketing Coordinator</span>
+          </div>
+        </figure>
+
+        <!-- SLIDE 2 -->
+        <figure class="slide">
+          <img class="avatar" src="images/Peter.jpg" alt="Simon">
+          <blockquote class="quote">
+            I’ll never purchase any other and I will spread the word. I’d highly recommend it.
+          </blockquote>
+          <div class="person">
+            <strong class="name">Peter Holm</strong>
+            <span class="role">Barista</span>
+          </div>
+        </figure>
+
+        <!-- SLIDE 3 -->
+        <figure class="slide">
+          <img class="avatar" src="images/Marie.jpg" alt="Marie">
+          <blockquote class="quote">
+            Smooth ordering, quick delivery, and the taste is outstanding every single time.
+          </blockquote>
+          <div class="person">
+            <strong class="name">Marie Christiansen</strong>
+            <span class="role">App Developer</span>
+          </div>
+        </figure>
       </div>
 
-  
+      <!-- Pile i siderne -->
+      <button class="galleri-prev" aria-label="Forrige">‹</button>
+      <button class="galleri-next" aria-label="Næste">›</button>
+
+      <!-- Dots -->
+      <div class="dots" aria-label="Slides"></div>
+    </div>
+  </div>
 
   
     <section class="frivillig">
