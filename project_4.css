@@ -371,10 +371,10 @@ html {
     }
   }
 
-/* Baggrund som i eksempel 2 */
+/* Baggrund */
 :root{
   --bg: #fff;
-  --card: #f6fbff;
+  --card: var(--brand-green);
   --text: #2b2f33;
   --muted: #6c7784;
 }
