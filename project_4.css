@@ -46,14 +46,7 @@ body, p {
   color: #2c2c2c;
 }
 
-/* Citater (Raleway Medium Italic) */
-.quote {
-  font-family: 'Raleway', sans-serif;
-  font-style: italic;
-  font-weight: 500;
-  font-size: 12px;
-  color: var(--orange);
-}
+
 
 * { 
   box-sizing: border-box; 
@@ -236,34 +229,9 @@ html {
 .footer-left .footer-row span {
   word-break: break-word;
 }
-.video-section {
-    width: 100%;
-    max-width: var(--maxw);
-    margin: 32px auto;
-    padding: 0 16px;
-  }
+
   
-  /* wrapper for vertical video */
-  .video-wrapper {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 9 / 16; /* vertical format (1080x1920) */
-    border-radius: 12px;
-    overflow: hidden;
-    background: #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  /* ensure the full vertical video fits inside without cropping */
-  .custom-video {
-    width: auto;
-    height: 100%;
-    object-fit: cover; /* ensures full video is visible */
-    display: block;
-    margin: 0 auto;
-  }
+ 
   
   .play-button {
     position: absolute;
@@ -334,42 +302,7 @@ html {
   :root {
     --accent-orange: #EA620E; /* for quote */
   }
-  
-/* ===== Desktop video adjustments (no green border) ===== */
-@media (min-width: 960px) {
-    .video-section {
-      display: flex;
-      justify-content: center;
-      padding: 40px 0;
-    }
-  
-    .video-wrapper {
-      max-width: 360px; /* keeps it narrow like a vertical video on desktop */
-      aspect-ratio: 9 / 16;
-      border-radius: 16px;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-      overflow: hidden;
-      background: #000;
-      transition: transform 0.2s ease;
-    }
-  
-    .video-wrapper:hover {
-      transform: scale(1.02);
-    }
-  
-    .custom-video {
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
-      display: block;
-    }
-  }
-  
-  @media (min-width: 960px) {
-    .hero-video .video-wrapper {
-      max-width: 420px; /* make hero video stand out a bit */
-    }
-  }
+
 
 /* Baggrund */
 :root{
@@ -450,24 +383,7 @@ body{
 .name{ font-size:1.1rem; }
 .role{ color:var(--muted); font-size:.9rem; }
 
-/* pile i siderne (runde, semitransparente) */
-.galleri-prev, .galleri-next{
-  position:absolute;
-  top:50%;
-  transform:translateY(-50%);
-  width:44px; height:44px;
-  border-radius:50%;
-  border:1px solid rgba(0,0,0,.08);
-  background:#ffffffcc;      /* hvid m. lidt gennemsigtighed */
-  box-shadow:0 6px 18px rgba(0,0,0,.08);
-  font-size:26px;
-  line-height:44px;
-  text-align:center;
-  cursor:pointer;
-  transition:.2s;
-}
-.galleri-prev{ left:-22px; } /* halvt udenfor kortet */
-.galleri-next{ right:-22px; }
+
 .galleri-prev:hover, .galleri-next:hover{
   background:#fff;
   transform:translateY(-50%) scale(1.05);
@@ -492,29 +408,6 @@ body{
   .card{ padding:40px 24px 48px; }
 }
   
-  
-  
-    /* Make the hero video tidy in its column */
-    .hero-grid .video-section {
-      padding: 0;
-      display: block;
-    }
-    .hero-grid .video-wrapper {
-      max-width: 420px;           /* match grid left column */
-      aspect-ratio: 9 / 16;
-      border-radius: 16px;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-      overflow: hidden;
-      background: #000;
-      margin: 0;
-    }
-     /* Carousel column tweaks for desktop */
-    .hero-grid .carousel { position: relative; padding: 6px 0; }
-    .hero-grid .carousel .quote { text-align: left; margin-left: 0; margin-right: 0; max-width: 38ch; }
-    .hero-grid .author { text-align: left; }
-    .hero-grid .carousel-dots { justify-content: flex-start; }
-    .hero-grid .carousel-nav.prev { left: 1px; }
-    .hero-grid .carousel-nav.next { right: 1px; }
     
   /* Force center text on all carousel slides */
 .carousel .slide,
@@ -525,13 +418,7 @@ body{
   margin-right: auto !important;
 }
 
-/* Make sure the quote block width centers nicely */
-.carousel .quote {
-  display: block;
-  max-width: 32ch; /* optional: adjust width */
-}
 
-  
 
   .mission{
     max-width: 780px;
@@ -704,11 +591,13 @@ body{
 
   /* Image: half width on desktop */
   #storyImage {
-    width: 50%;
-    height: auto;
+    width: 400px;         /* Example size: adjust to best fit your layout */
+    height: 400px;
+    object-fit: cover;    /* Ensures image always fills the square */
     border-radius: 16px;
     box-shadow: 0 8px 22px rgba(0,0,0,.12);
-    flex: 0 0 50%;
+    display: block;
+    margin: 0 auto;
   }
 
   /* Text: to the right of the image */
@@ -728,4 +617,362 @@ body{
   text-align: center;
   margin: 0 0 12px;
   font-size: clamp(22px, 3.2vw, 34px); /* replaces the 22/28/34px media steps */
+}
+
+
+/* Force hero-grid to stack (video first, gallery below) on all sizes */
+.hero-grid {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 28px !important;
+  align-items: start !important;
+}
+
+
+/* hover scale */
+.galleri-prev:hover,
+.galleri-next:hover {
+  transform: translateY(-50%) scale(1.05);
+  background: #fff;
+}
+
+
+
+/* ===== Mobile overflow safety — put at EOF ===== */
+html, body {
+  /* safety net — still allow normal scrolling vertically */
+  overflow-x: hidden;
+}
+
+/* Force the gallery container to line up with page container on small screens */
+@media (max-width: 640px) {
+  /* Keep scene padding equal to container's horizontal padding and avoid extra wide behaviour */
+  
+
+  /* Make sure the gallery card never exceeds the viewport minus the scene padding */
+ 
+
+  /* Keep inner content from forcing extra width */
+  .galleri-track,
+  .slide,
+  .quote,
+  .avatar,
+  .person {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    word-break: break-word !important;
+  }
+
+ 
+  /* Dots: prevent them from stretching the layout */
+  .dots { padding: 0 4px; box-sizing: border-box; }
+
+  /* Extra safety: any absolutely positioned elements that could cause overflow */
+  .card *[style*="left:"],
+  .card *[style*="right:"] {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+}
+
+
+
+/* Safety: avoid accidental horizontal scroll */
+html, body { max-width: 100%; overflow-x: hidden; }
+
+/* Keep global container consistent */
+.container { box-sizing: border-box; }
+
+/* Ensure hero grid stacks (video first, gallery under) on all viewports */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+
+/* === Gallery: center and never overflow === */
+/* Scene wraps the card and aligns with the page container */
+.scene {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 24px 16px;
+  margin: 0 auto;
+  min-height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Card: limited by container width and responsive */
+.card {
+  position: relative;           /* for absolute nav buttons */
+  width: 100%;
+  max-width: min(760px, calc(var(--maxw) - 32px)); /* keep inside container */
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 28px 20px;
+  border-radius: 12px;
+  background: var(--card, var(--brand-green));
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  overflow: visible;
+}
+
+/* Track & slides */
+.galleri-track {
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+}
+.slide {
+  display: none;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+.slide.is-active { display: block; }
+
+/* Avatar and text scale on small screens */
+.avatar {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 18px;
+  display: block;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+.quote {
+  margin: 0 auto 14px;
+  max-width: 100%;
+  line-height: 1.45;
+  font-size: 1rem;
+  color: var(--text);
+  word-break: break-word;
+}
+.person { display: flex; flex-direction: column; gap: 6px; align-items: center; }
+.name { font-size: 1.05rem; font-weight: 700; }
+.role { color: var(--muted); font-size: .95rem; }
+
+/* Dots */
+.dots { display: flex; gap: 8px; justify-content: center; margin-top: 18px; }
+.dots button { width: 8px; height: 8px; border-radius: 50%; border: none; cursor: pointer; background: #c9d6e6; }
+.dots button.is-active { background: var(--orange); }
+
+/* Nav buttons — always inside the card to avoid overflow */
+.galleri-prev,
+.galleri-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.95);
+  border: 1px solid rgba(0,0,0,0.06);
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+/* left / right positions inside the card */
+.galleri-prev { left: 12px; }
+.galleri-next { right: 12px; }
+
+/* hover */
+.galleri-prev:hover, .galleri-next:hover { transform: translateY(-50%) scale(1.05); background: #fff; }
+
+/* ----------------------------
+   Mobile adjustments (<= 640px)
+   ---------------------------- */
+@media (max-width: 640px) {
+  /* make sure scene padding mirrors header/container */
+  .scene { padding-left: 16px; padding-right: 16px; }
+
+  /* card: tighter */
+  .card { padding: 18px 14px; border-radius: 10px; }
+
+  /* avatar smaller */
+  .avatar { width: 72px; height: 72px; margin-bottom: 12px; }
+
+  /* ensure video fits in its container (prevents cutting off) */
+  
+  
+
+  /* nav buttons slightly smaller */
+  .galleri-prev, .galleri-next { width: 34px; height: 34px; }
+  .galleri-prev { left: 10px; }
+  .galleri-next { right: 10px; }
+
+  /* prevent any child from stretching the card wider */
+  .galleri-track, .slide, .quote, .person { max-width: 100%; box-sizing: border-box; word-break: break-word; }
+
+  /* safety: block-level overflow */
+  html, body, .scene, .card { overflow-x: hidden; }
+}
+
+/* ----------------------------
+   Desktop spacing tweaks (>= 960px)
+   ---------------------------- */
+@media (min-width: 960px) {
+  .scene { padding: 32px 16px; }
+  .card { padding: 32px 28px; }
+  .avatar { width: 120px; height: 120px; margin-bottom: 20px; }
+  .quote { font-size: 1.06rem; max-width: 52ch; margin: 0 auto 20px; }
+}
+/* ===== video: mobile-first behavior + desktop fills wrapper ===== */
+
+/* Video container (keeps wrapper aligned with page container) */
+.video-section {
+  width: 100%;
+  max-width: var(--maxw);
+  margin: 32px auto;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+/* Wrapper: phone-like aspect, nice rounded corners, background matches card */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 9 / 16;       /* vertical phone format */
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--card, var(--brand-green)); /* blends letterbox with card */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* Mobile-first: preserve full frame (no cropping) on narrow screens */
+.custom-video {
+  width: auto;
+  height: 100%;
+  object-fit: contain;    /* show entire frame (no crop) */
+  display: block;
+  background: transparent;
+}
+
+/* Desktop: fill the wrapper (no black bars) by covering it */
+@media (min-width: 960px) {
+  .video-wrapper {
+    max-width: 420px;            /* make hero slightly larger if desired */
+    border-radius: 16px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+    transition: transform .18s ease;
+  }
+  .video-wrapper:hover { transform: scale(1.01); }
+
+  .custom-video {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;  /* fills wrapper; removes letterbox/pillarbox */
+    display: block;
+  }
+}
+
+  /* ===== hero-grid: desktop layout + tidy video wrapper ===== */
+@media (min-width: 960px) {
+  /* Two-column layout: fixed-width video column, flexible right column */
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 420px 1fr; /* left fixed to video width, right flexible */
+    gap: 36px;
+    align-items: center; /* center both columns vertically */
+    padding-top: 28px;
+    padding-bottom: 12px;
+  }
+
+  /* Make the video wrapper look like a tall phone and sit nicely in the left column */
+  .hero-grid .video-section {
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+
+  .hero-grid .video-wrapper {
+    max-width: 420px;
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    border-radius: 16px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    overflow: hidden;
+    background: var(--card, var(--brand-green));
+    transition: transform .18s ease;
+  }
+  .hero-grid .video-wrapper:hover { transform: scale(1.01); }
+
+  /* Video should fully fill the wrapper on desktop to avoid black bars */
+  .hero-grid .custom-video {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important; /* fills wrapper, removes letterbox/pillarbox */
+    display: block;
+  }
+
+  /* Make the carousel area a bit narrower for nicer balance */
+  .hero-grid .gallery-section { max-width: 520px; }
+  .hero-grid .carousel { position: relative; padding: 6px 0; }
+  .hero-grid .carousel .quote { text-align: left; max-width: 38ch; }
+  .hero-grid .author { text-align: left; }
+  .hero-grid .carousel-dots { justify-content: flex-start; }
+}
+
+  
+  
+  /* ===== MOBILE OVERRIDES — force mobile-safe video behavior ===== */
+@media (max-width: 959px) {
+  /* constrain the video container to the viewport (same width as header/container) */
+  .video-section {
+    max-width: calc(100% - 32px); /* same horizontal padding as header/container */
+    margin: 20px auto;
+    padding: 0 16px;
+    box-sizing: border-box;
+  }
+
+  /* make wrapper phone-sized and never exceed viewport */
+  .video-wrapper {
+    width: 100%;
+    max-width: 360px;   /* phone-like width on narrow screens */
+    aspect-ratio: 9 / 16;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--card, var(--brand-green));
+    box-sizing: border-box;
+  }
+
+  /* FORCE mobile video sizing — show full frame (no cropping) */
+  .custom-video {
+    width: auto !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    display: block !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    background: transparent !important;
+  }
+}
+/* ===== Center the top/hero video horizontally ===== */
+.hero-grid {
+  justify-content: center; /* ensures the entire grid is centered */
+}
+
+.hero-grid .video-section {
+  display: flex;
+  justify-content: center; /* center video horizontally */
+  align-items: center;
+  margin: 0 auto; /* ensure equal margins on both sides */
+  padding: 0;
+}
+
+.hero-grid .video-wrapper {
+  margin: 0 auto; /* keeps the wrapper centered even if parent grid shifts */
 }
