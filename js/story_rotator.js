@@ -1,8 +1,10 @@
-window.onload = function() {
+//venter til siden er loadet, og henter så elementerne://
+window.onload = function() { 
   const btn = document.getElementById('storyNext');
   const text = document.getElementById('storyText');
   const image = document.getElementById('storyImage');
 
+//bygger array med disse elementer//
   const items = [
     { text: 'PÅ 2 TIMER KAN DU NÅ AT: "Se 4 afsnit af Friends... igen."', img: 'images/friends.gif' },
     { text: 'PÅ 2 TIMER KAN DU NÅ AT: "Scrolle 3,2 kilometer ned i dit Instagram-feed."', img: 'images/instagram2hs.gif' },
@@ -11,18 +13,21 @@ window.onload = function() {
     { text: '"Du kan også bruge 2 timer OM MÅNEDEN på at gøre en reel forskel for en ung. Hvad tæller mest?"', img: 'images/ventileninstead.gif' }
   ];
 
+  //opretter variabel med værdi 0//
   let index = 0;
 
+  //siger at text og image IKKE skal vises i starten//
   text.style.display = 'none';
   image.style.display = 'none';
 
+  //opretter de ting der skal være med i funktion "render"//
   function render() {
     const currentItem = items[index];
     text.textContent = currentItem.text;
     image.src = currentItem.img;
-    image.alt = currentItem.text;
   }
 
+  //når "tidsknappen" trykkes kører funktionen render//
   btn.onclick = function () {
     if (text.style.display === 'none') {
       text.style.display = '';
