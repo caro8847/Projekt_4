@@ -117,7 +117,7 @@ html {
 
 /* Title section (moved from .hero) */
 .main-title {
-  background: #fff;
+  background: none;
   text-align: center;
   padding-top: 32px;
   padding-bottom: 40px;
@@ -976,3 +976,73 @@ html, body { max-width: 100%; overflow-x: hidden; }
 .hero-grid .video-wrapper {
   margin: 0 auto; /* keeps the wrapper centered even if parent grid shifts */
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.squiggle_1 {
+    position: absolute;
+    width: clamp(20%, 25vw, 25%);
+    top: clamp(-50px, 5vh, -50px);
+    left: clamp(-30px, 3vw, -30px);
+    z-index: -1;
+}
+
+.squiggle_2 {
+    position: absolute;
+    width: clamp(20%, 25vw, 25%);
+    top: clamp(750px, 50vh, 1000px);
+    right: clamp(-100px, -5vw, -100px);
+    z-index: -1;
+}
+
+/* gentag samme princip for 3–6 */
+.squiggle_3 {
+    position: absolute;
+    width: clamp(10%, 15vw, 15%);
+    top: clamp(550px, 40vh, 750px);
+    left: clamp(-50px, -3vw, -50px);
+    z-index: -1;
+}
+
+.squiggle_4 {
+    position: absolute;
+    width: clamp(20%, 25vw, 25%);
+    top: clamp(50px, 10vh, 100px);
+    right: clamp(-100px, -3vw, -100px);
+    z-index: -1;
+}
+
+.squiggle_5 {
+    position: absolute;
+    width: clamp(10%, 15vw, 15%);
+    top: clamp(1500px, 80vh, 2000px);
+    right: clamp(-75px, -2vw, -75px);
+    z-index: -1;
+}
+
+.squiggle_6 {
+    position: absolute;
+    width: clamp(20%, 25vw, 25%);
+    top: clamp(1250px, 70vh, 1750px);
+    left: clamp(-100px, -3vw, -100px);
+    z-index: -1;
+}
+
