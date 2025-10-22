@@ -1,4 +1,4 @@
-// js/story_rotator.js (basic version with let)
+// js/story_rotator.js
 (function () {
   const rotatorRoot = document.getElementById('storyRotator');
   if (!rotatorRoot) return;
