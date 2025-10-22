@@ -1,4 +1,3 @@
-// js/story_rotator.js
 (function () {
   // Henter elementer direkte uden sikkerhedstjek
   const rotatorRoot = document.getElementById('storyRotator');
