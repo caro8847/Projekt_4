@@ -996,7 +996,7 @@ html, body { max-width: 100%; overflow-x: hidden; }
 
 
 
-
+@media (min-width: 960px) {
 .squiggle_1 {
     position: absolute;
     width: clamp(20%, 25vw, 25%);
@@ -1045,4 +1045,4 @@ html, body { max-width: 100%; overflow-x: hidden; }
     left: clamp(-100px, -3vw, -100px);
     z-index: -1;
 }
-
+}
