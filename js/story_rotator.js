@@ -1,21 +1,21 @@
+// js/story_rotator.js
 (function () {
+  // Henter elementer direkte uden sikkerhedstjek
   const rotatorRoot = document.getElementById('storyRotator');
-  if (!rotatorRoot) return;
-
-  const btn   = document.getElementById('storyNext');
-  const text  = document.getElementById('storyText');
+  const btn = document.getElementById('storyNext');
+  const text = document.getElementById('storyText');
   const image = document.getElementById('storyImage');
 
-  // The two headings inside the rotator
+  // Henter overskrifter direkte og antager, de altid findes
   const titles = rotatorRoot.getElementsByClassName('story-title');
-  const titlePrimary   = titles.length > 0 ? titles[0] : null; // "Tid er det, vi har mindst af..."
-  const titleSecondary = titles.length > 1 ? titles[1] : null; // "Eller er det?"
+  const titlePrimary = titles[0];   // Antager, at det første element findes
+  const titleSecondary = titles[1]; // Antager, at det andet element findes
 
-  // Start hidden: nothing shown until first click
-  if (text)  text.style.display  = 'none';
-  if (image) image.style.display = 'none';
+  // Skjuler elementer ved start uden sikkerhedstjek
+  text.style.display = 'none';
+  image.style.display = 'none';
 
-  // Items (objects in an array)
+  // Data: Items (objekter i et array)
   const items = [
     { text: '"Se 4 afsnit af Friends... igen."', img: 'images/friends.gif', alt: '"Se 4 afsnit af Friends... igen."' },
     { text: '"Scrolle 3,2 kilometer ned i dit Instagram-feed."', img: 'images/instagram2hs.gif', alt: '"Scrolle 3,2 kilometer ned i dit Instagram-feed."' },
@@ -44,27 +44,23 @@
     }
   }
 
-  // Preload images (loop)
+  // Preload images
   for (let i = 0; i < items.length; i++) {
     const pre = new Image();
     pre.src = items[i].img;
   }
 
-  // Click handler (basic DOM)
+  // Click handler (DOM)
   btn.onclick = function () {
-    // First click: change titles
+    // Første klik: ændrer titler uden sikkerhedstjek
     if (!firstClickHandled) {
-      if (titlePrimary) {
-        titlePrimary.textContent = 'Hvad kan du nå på 2 timer?';
-        titlePrimary.style.color = '#1A3DFF';
-      }
-      if (titleSecondary && titleSecondary.parentNode) {
-        titleSecondary.parentNode.removeChild(titleSecondary);
-      }
+      titlePrimary.textContent = 'Hvad kan du nå på 2 timer?';
+      titlePrimary.style.color = '#1A3DFF';
+      titleSecondary.parentNode.removeChild(titleSecondary);
       firstClickHandled = true;
     }
 
-    // Rotate
+    // Rotations-logik
     index = index + 1;
     if (index >= items.length) {
       index = 0;
