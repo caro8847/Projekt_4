@@ -27,7 +27,7 @@ function addSocials() {
 
     //loop gennem alle sociale medier i array
     for (let i = 0; i < socials.length; i++) {
-    const s = socials[i];
+        const s = socials[i];
 
         //laver et <a> link-element 
         const a = document.createElement('a');
