@@ -1,16 +1,16 @@
 (function () {
-  // Henter elementer direkte uden sikkerhedstjek
+  // Henter elementer
   const rotatorRoot = document.getElementById('storyRotator');
   const btn = document.getElementById('storyNext');
   const text = document.getElementById('storyText');
   const image = document.getElementById('storyImage');
 
-  // Henter overskrifter direkte og antager, de altid findes
+  // Henter overskrifter
   const titles = rotatorRoot.getElementsByClassName('story-title');
-  const titlePrimary = titles[0];   // Antager, at det første element findes
-  const titleSecondary = titles[1]; // Antager, at det andet element findes
+  const titlePrimary = titles[0];   
+  const titleSecondary = titles[1]; 
 
-  // Skjuler elementer ved start uden sikkerhedstjek
+  // Skjuler elementer ved start
   text.style.display = 'none';
   image.style.display = 'none';
 
@@ -51,7 +51,7 @@
 
   // Click handler (DOM)
   btn.onclick = function () {
-    // Første klik: ændrer titler uden sikkerhedstjek
+    // Første klik: ændrer titler
     if (!firstClickHandled) {
       titlePrimary.textContent = 'Hvad kan du nå på 2 timer?';
       titlePrimary.style.color = '#1A3DFF';
