@@ -227,7 +227,7 @@ html {
 
 /* Optional safeguard for small screens */
 .footer-left .footer-row span {
-  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
   
@@ -660,7 +660,7 @@ html, body {
   .person {
     max-width: 100% !important;
     box-sizing: border-box !important;
-    word-break: break-word !important;
+    overflow-wrap: break-word;
   }
 
  
@@ -751,7 +751,7 @@ html, body { max-width: 100%; overflow-x: hidden; }
   line-height: 1.45;
   font-size: 1rem;
   color: var(--text);
-  word-break: break-word;
+  overflow-wrap: break-word;
 }
 .person { display: flex; flex-direction: column; gap: 6px; align-items: center; }
 .name { font-size: 1.05rem; font-weight: 700; }
@@ -811,7 +811,7 @@ html, body { max-width: 100%; overflow-x: hidden; }
   .galleri-next { right: 10px; }
 
   /* prevent any child from stretching the card wider */
-  .galleri-track, .slide, .quote, .person { max-width: 100%; box-sizing: border-box; word-break: break-word; }
+  .galleri-track, .slide, .quote, .person { max-width: 100%; box-sizing: border-box; overflow-wrap: break-word; }
 
   /* safety: block-level overflow */
   html, body, .scene, .card { overflow-x: hidden; }
