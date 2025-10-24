@@ -55,7 +55,7 @@ body, p {
 }
 
 body {
-  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
+  
   color: var(--text);
   background: #fff;
   line-height: 1.4;
@@ -149,7 +149,6 @@ html {
   background: var(--brand-green, #CFE7D2);
   color: var(--text, #0f172a);
   padding: 28px 16px 32px;
-  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 .footer-container {
@@ -311,11 +310,10 @@ html {
   --text: #2b2f33;
   --muted: #6c7784;
 }
-*{box-sizing:border-box}
+
 
 body{
   margin:0;
-  font-family: Arial, Helvetica, sans-serif;
   color: var(--text);
   background: var(--bg);
 }
@@ -646,10 +644,10 @@ html, body {
 
 /* Force the gallery container to line up with page container on small screens */
 @media (max-width: 640px) {
-  /* Keep scene padding equal to container's horizontal padding and avoid extra wide behaviour */
+ 
   
 
-  /* Make sure the gallery card never exceeds the viewport minus the scene padding */
+
  
 
   /* Keep inner content from forcing extra width */
@@ -976,25 +974,6 @@ html, body { max-width: 100%; overflow-x: hidden; }
 .hero-grid .video-wrapper {
   margin: 0 auto; /* keeps the wrapper centered even if parent grid shifts */
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 @media (min-width: 960px) {
 .squiggle_1 {
