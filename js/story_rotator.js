@@ -1,3 +1,5 @@
+//General inspiration og hjælp er fra Gemini A.i. (mange beskedder frem og tilbage inklusiv spørgsmål og efterspørgsler på kodegeneration i form af eksempler, alternativer, tests mm. (Det er foregået i individuelle chattråde. Én promt eller chattråd er derfor ikke aktuel ))
+
 //venter til siden er loadet, og henter så elementerne://
 window.onload = function() { 
   const btn = document.getElementById('storyNext');
