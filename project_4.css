@@ -1001,6 +1001,7 @@ html, body { max-width: 100%; overflow-x: hidden; }
   overflow: hidden;
 }
 
+/*Hjælp fra ChatGPT til passende vw og vh: https://chatgpt.com/share/68fdeb1f-cc18-800a-97f8-eb55673e6d3e*/
 .squiggle_1 {
   position: absolute;
   width: clamp(20%, 25vw, 25%);
