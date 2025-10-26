@@ -1,4 +1,4 @@
-// Galleri eller Carousel eller hvad man nu kalder det...
+// Galleri Maria
 
 //Finder hele galleriet i HTML'en
 var root = document.getElementById("galleri");
@@ -6,12 +6,9 @@ if (root) { //hvis galleriet findes så kører koden herunder
   var track   = root.querySelector(".galleri-track"); //Finder den del der holder alle billederne
   var slides  = track.children; //Finder alle billederne inde i galleriet
   var prevBtn = root.querySelector(".galleri-prev"); //Finder venstre pil
-  //Finder højre pil
-  var nextBtn = root.querySelector(".galleri-next");
-  //Finder boksen hvor prikkerne (dots) skal være
-  var dotsBox = root.querySelector(".dots");
-  //Starter på billede nummer 0 (det første billede)
-  var index   = 0;
+  var nextBtn = root.querySelector(".galleri-next"); //Finder højre pil
+  var dotsBox = root.querySelector(".dots"); //Finder boksen hvor prikkerne (dots) skal være
+  var index   = 0; //Starter på billede nummer 0 (det første billede)
 
   //Skriver ud i konsollen hvor mange billeder der er (hjælper når man tester)
   console.log("Slides fundet:", slides.length);
@@ -19,18 +16,12 @@ if (root) { //hvis galleriet findes så kører koden herunder
   // Byg dots (en knap pr. slide)
   function buildDots() {
     var i;
-    //Fjerner alt der allerede er i boksen
-    dotsBox.innerHTML = "";
-    //Går igennem alle billederne ét for ét
-    for (i = 0; i < slides.length; i++) {
-      //Laver en ny knap
-      var b = document.createElement("button");
-      //Giver knappen et navn som kan bruges af skærmlæsere
-      b.setAttribute("aria-label", "Gå til slide " + (i + 1));
-      //Gemmer nummeret på knappen
-      b.dataset.index = String(i);
-      //Når man klikker på knappen skal det rigtige billede vises
-      b.addEventListener("click", function () {
+    dotsBox.innerHTML = ""; //Fjerner alt der allerede er i boksen
+    for (i = 0; i < slides.length; i++) { //Går igennem alle billederne ét for ét
+      var b = document.createElement("button"); //Laver en ny knap
+      b.setAttribute("aria-label", "Gå til slide " + (i + 1)); //Giver knappen et navn som kan bruges af skærmlæsere
+      b.dataset.index = String(i); //Gemmer nummeret på knappen
+      b.addEventListener("click", function () { //Når man klikker på knappen skal det rigtige billede vises
         var to = parseInt(this.dataset.index, 10);
         showSlide(to); //Viser det rigtige billede
       });
