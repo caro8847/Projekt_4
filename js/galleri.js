@@ -1,4 +1,6 @@
 // Galleri Maria
+//link til hjælpevideo fra youtube: https://www.youtube.com/watch?v=VUtJ7FWCfZA&list=PLpwngcHZlPae68z_mLFNfbJFIJVJ_Zcx2
+//link til hjælp fra W3schools: https://www.w3schools.com/js/js_loop_for.asp 
 
 //Finder hele galleriet i HTML'en
 var root = document.getElementById("galleri");
